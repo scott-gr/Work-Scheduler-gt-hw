@@ -15,6 +15,10 @@ var hour = document.querySelector('hour')//rename
 //if hour = currenttime, description is red
 //if past, description grey
 //if future, description green
+  //for loop or does if, else with Moment do enough?
+
 
 
 //EVENT LISTENERS
+
+//button click
