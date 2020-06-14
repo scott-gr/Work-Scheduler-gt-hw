@@ -29,7 +29,17 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <div class = 'row' id="hourRow">
+        <div class = 'col-md-2' id='hourCol'></div>
+          <span id= 'hourText'>12:00</span>
+        </div>
+        <div class="col-md-9" id='noteCol'>
+          <span id= 'noteText'>At this time, I will eat a cookie.</span>
+        </div>
+        <div class="col-md-1" id="btnCol">
+          <!-- Save Button will appear here when text is added to noteCol-->
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
