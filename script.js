@@ -35,7 +35,16 @@ $(document).ready(function () {
       // var textCol = // generate text area
       // var btnCol = // generate button
 
-    if workHours[i] == 
+      if (workHours[i] == nowHour){
+        descriptionEl.addClass('present')
+      }
+      else if (workHours[i] < hour) {
+        descriptionEl.addClass('past');
+      }
+      else {
+        descriptionEl.addClass('future');
+      };
+
     
     }
   }
