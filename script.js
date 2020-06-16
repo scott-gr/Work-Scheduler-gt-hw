@@ -22,8 +22,8 @@ $(document).ready(function () {
 
   function makeRows() {
     for (var i = 0; i < workHours.length; i++) {
-      var rowEl = $('<div>').addClass('.row');
-      var timeBlockEl = $('<div>').addClass('time-Block');
+      var rowEl = $('<div>').addClass('row');
+      var timeBlockEl = $('<div>').addClass('time-block');
       var hourCol = $('<div>').addClass('col-2 hour');
       var descriptionEl = $('<div>').addClass('col-9 description');
       var buttonColEl = $('<button>').addClass('col-1 saveBtn');
