@@ -19,7 +19,7 @@ $(document).ready(function () {
   console.log(moment.duration(8, 'hours').hours());
   var a = moment().format('hh[:00]');
   console.log(a);
-  var nowHour = now.hour();
+  var nowHour = moment().hour();
   console.log(nowHour)
   ///FUNCTIONS
 
@@ -31,25 +31,30 @@ $(document).ready(function () {
       timeBlockEl = $('<div>').addClass('timeBlock');
       hourCol = $('<div>').addClass('col-2 hour');
       descriptionEl = $('<div>').addClass('col-9 description');
-      var hourText = workHours[i];
-      // var textCol = // generate text area
-      // var btnCol = // generate button
+      buttonColEl = $('<button>').addClass('col-1 saveBtn');
+
 
       if (workHours[i] == nowHour){
         descriptionEl.addClass('present')
       }
-      else if (workHours[i] < hour) {
+      else if (workHours[i] < nowHour) {
         descriptionEl.addClass('past');
       }
       else {
         descriptionEl.addClass('future');
       };
+      
+      i++;
 
     
     }
   }
+
+  makeRows();
   
 });
+
+
 //function saveNote
 //when save button is clicked, save contents and hour to localstorage
 // if there is already a note in local storage for that hour, update it or clear it before saving
