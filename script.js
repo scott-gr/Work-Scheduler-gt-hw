@@ -5,16 +5,16 @@ $(document).ready(function () {
     '10:00 AM',
     '11:00 AM',
     '12:00 PM',
-    '1:00 PM',
-    '2:00 PM',
-    '3:00 PM',
-    '4:00 PM',
-    '5:00 PM',
+    '13:00 PM',
+    '14:00 PM',
+    '15:00 PM',
+    '16:00 PM',
+    '17:00 PM',
   ];
 
   //moment testing
   console.log(moment.duration(8, 'hours').hours());
-  var nowHour = moment().format('h[:00] A');
+  var nowHour = moment().format('HH[:00] A');
   console.log(nowHour);
   ///FUNCTIONS
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
       if (workHours[i] == nowHour){
         descriptionEl.addClass('present')
       }
-      else if (workHours[i] < nowHour) {
+      else if (parseInt(workHours[i]) < parseInt(nowHour)) {
         descriptionEl.addClass('past');
       }
       else {
