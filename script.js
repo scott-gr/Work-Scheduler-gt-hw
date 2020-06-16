@@ -1,8 +1,5 @@
 $(document).ready(function () {
-  //VARIABLES
-  // var saveBtnEl = document.querySelector('saveBtn');
-  // var RowEl = document.querySelector('row');
-  // var hourEl = document.querySelector('hour');
+
   var workHours = [
     '9:00 AM',
     '10:00 AM',
@@ -24,15 +21,12 @@ $(document).ready(function () {
   ///FUNCTIONS
 
   function makeRows() {
-
-    var i = 0;
-    while (i < workHours.length) {
-      rowEl = $('<div>').addClass('row');
-      timeBlockEl = $('<div>').addClass('timeBlock');
-      hourCol = $('<div>').addClass('col-2 hour');
-      descriptionEl = $('<div>').addClass('col-9 description');
-      buttonColEl = $('<button>').addClass('col-1 saveBtn');
-
+    for (var i = 0; i < workHours.length; i++) {
+      var rowEl = $('<div>').addClass('row');
+      var timeBlockEl = $('<div>').addClass('time-block');
+      var hourCol = $('<div>').addClass('col-2 hour');
+      var descriptionEl = $('<div>').addClass('col-9 description');
+      var buttonColEl = $('<button>').addClass('col-1 saveBtn');
 
       if (workHours[i] == nowHour){
         descriptionEl.addClass('present')
@@ -43,12 +37,16 @@ $(document).ready(function () {
       else {
         descriptionEl.addClass('future');
       };
-      
-      i++;
+      rowEl.append(hourCol.text(workHours[i]));
+      rowEl.append(descriptionEl);
+      rowEl.append(buttonColEl);
+      timeBlockEl.append(rowEl);
+      //container with all row elements added above 
+      $('.container').append(timeBlockEl);
 
     
-    }
-  }
+    };
+  };
 
   makeRows();
   
