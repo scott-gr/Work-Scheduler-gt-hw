@@ -5,19 +5,17 @@ $(document).ready(function () {
     '10:00 AM',
     '11:00 AM',
     '12:00 PM',
-    '1:00 PM',
-    '2:00 PM',
-    '3:00 PM',
-    '4:00 PM',
-    '5:00 PM',
+    '13:00 PM',
+    '14:00 PM',
+    '15:00 PM',
+    '16:00 PM',
+    '17:00 PM',
   ];
 
   //moment testing
   console.log(moment.duration(8, 'hours').hours());
-  var a = moment().format('hh[:00]');
-  console.log(a);
-  var nowHour = moment().hour();
-  console.log(nowHour)
+  var nowHour = moment().format('HH[:00] A');
+  console.log(nowHour);
   ///FUNCTIONS
 
   function makeRows() {
@@ -25,13 +23,13 @@ $(document).ready(function () {
       var rowEl = $('<div>').addClass('row');
       var timeBlockEl = $('<div>').addClass('time-block');
       var hourCol = $('<div>').addClass('col-2 hour');
-      var descriptionEl = $('<div>').addClass('col-9 description');
+      var descriptionEl = $('<textarea>').addClass('col-9 description');
       var buttonColEl = $('<button>').addClass('col-1 saveBtn');
 
       if (workHours[i] == nowHour){
         descriptionEl.addClass('present')
       }
-      else if (workHours[i] < nowHour) {
+      else if (parseInt(workHours[i]) < parseInt(nowHour)) {
         descriptionEl.addClass('past');
       }
       else {
