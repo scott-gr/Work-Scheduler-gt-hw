@@ -14,10 +14,8 @@ $(document).ready(function () {
 
   //moment testing
   console.log(moment.duration(8, 'hours').hours());
-  var a = moment().format('hh[:00]');
-  console.log(a);
-  var nowHour = moment().hour();
-  console.log(nowHour)
+  var nowHour = moment().format('h[:00] A');
+  console.log(nowHour);
   ///FUNCTIONS
 
   function makeRows() {
